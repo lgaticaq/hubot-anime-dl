@@ -7,6 +7,7 @@ helper = new Helper("./../src/index.coffee")
 
 describe "hubot-anime-dl", ->
   room = null
+  @timeout(20000)
 
   beforeEach ->
     room = helper.createRoom()
@@ -44,6 +45,7 @@ describe "hubot-anime-dl", ->
     it "should return a error for chapter outside in range", ->
       expect(room.messages).to.eql([
         ["user", "hubot anime-dl get one piece chapter 100000"]
+        ["hubot", "Searching..."]
         ["hubot", "Only chapters from 1 to 732"]
       ])
 
@@ -63,6 +65,7 @@ describe "hubot-anime-dl", ->
       setTimeout(done, 100)
 
     it "should return chapter link", ->
-      expect(room.messages).to.eql([
+      expect(room.messages[0]).to.eql(
         ["user", "hubot anime-dl get one piece chapter 100"]
-      ])
+      )
+      expect(room.messages[2][1]).to.match(/http:\/\/jkanime\.net\/stream\/jkmedia\/([0-9a-f]{32}\/[0-9a-f]{32}\/1\/[0-9a-f]{32})\//)
