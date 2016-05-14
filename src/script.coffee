@@ -2,7 +2,7 @@
 #   A Hubot script to download anime videos
 #
 # Dependencies:
-#   "anime-dl": "^2.0.1"
+#   "anime-dl": "^3.0.0"
 #
 # Configuration:
 #   None
