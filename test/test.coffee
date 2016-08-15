@@ -1,7 +1,16 @@
 Helper = require("hubot-test-helper")
 expect = require("chai").expect
-nock = require("nock")
-path = require("path")
+proxyquire = require("proxyquire")
+animeDlStub =
+  getLinksByNameAndChapter: (anime, chapter) ->
+    return new Promise (resolve, reject) ->
+      if anime is "not_found"
+        reject(new Error("Not found anime with keyword #{anime}"))
+      else if chapter is "100000"
+        reject(new Error("Only chapters from 1 to 20"))
+      else
+        resolve({urls: ["http://jkanime.net/stream/jkmedia/f0ba23ff34345f16c0f54abe1346a8f2/a28e5f284a491ba9f012bd30c66f58ee/1/a854fc803138d458f0e47287d7e1d3da/"]})
+proxyquire("./../src/script.coffee", {"anime-dl": animeDlStub})
 
 helper = new Helper("./../src/index.coffee")
 
@@ -17,28 +26,18 @@ describe "hubot-anime-dl", ->
 
   context "invalid anime", ->
     beforeEach (done) ->
-      nock.disableNetConnect();
-      nock("http://jkanime.net")
-        .get("/buscar/asdf")
-        .replyWithFile(200, path.join(__dirname, "not_found.html"))
-      room.user.say("user", "hubot anime-dl search asdf")
+      room.user.say("user", "hubot anime-dl get not_found chapter 1")
       setTimeout(done, 100)
 
     it "should return a error for invalid chapter", ->
       expect(room.messages).to.eql([
-        ["user", "hubot anime-dl search asdf"]
-        ["hubot", "Not found anime :cry:"]
+        ["user", "hubot anime-dl get not_found chapter 1"]
+        ["hubot", "Searching..."]
+        ["hubot", "Not found anime with keyword not_found"]
       ])
 
   context "invalid chapter", ->
     beforeEach (done) ->
-      nock.disableNetConnect();
-      nock("http://jkanime.net")
-        .get("/buscar/one%20piece")
-        .replyWithFile(200, path.join(__dirname, "found.html"))
-      nock("http://jkanime.net")
-        .get("/one-piece")
-        .replyWithFile(200, path.join(__dirname, "chapters.html"))
       room.user.say("user", "hubot anime-dl get one piece chapter 100000")
       setTimeout(done, 100)
 
@@ -46,21 +45,11 @@ describe "hubot-anime-dl", ->
       expect(room.messages).to.eql([
         ["user", "hubot anime-dl get one piece chapter 100000"]
         ["hubot", "Searching..."]
-        ["hubot", "Only chapters from 1 to 732"]
+        ["hubot", "Only chapters from 1 to 20"]
       ])
 
   context "valid anime and chapter", ->
     beforeEach (done) ->
-      nock.disableNetConnect();
-      nock("http://jkanime.net")
-        .get("/buscar/one%20piece")
-        .replyWithFile(200, path.join(__dirname, "found.html"))
-      nock("http://jkanime.net")
-        .get("/one-piece")
-        .replyWithFile(200, path.join(__dirname, "chapters.html"))
-      nock("http://jkanime.net")
-        .get("/one-piece/100")
-        .replyWithFile(200, path.join(__dirname, "chapter.html"))
       room.user.say("user", "hubot anime-dl get one piece chapter 100")
       setTimeout(done, 100)
 
