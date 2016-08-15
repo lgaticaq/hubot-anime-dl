@@ -1,3 +1,15 @@
+### 2.1.0 (2016-8-14)
+
+##### Chores
+
+* **package:**
+  * Update dependencies ([fea32878](https://github.com/lgaticaq/hubot-anime-dl/commit/fea328786ce552a68525abed69ebeee04c5de0fd))
+  * update mocha to version 3.0.0 ([e9acfe7e](https://github.com/lgaticaq/hubot-anime-dl/commit/e9acfe7e2243b84eed1acf679d9df4bb8814b39b))
+
+##### New Features
+
+* **src:** Add fix path url. Remove command search ([cda31c5f](https://github.com/lgaticaq/hubot-anime-dl/commit/cda31c5fa9c6e7b4d9f8aa1b26b6a5aa021971f8))
+
 ## 2.0.0 (2016-05-14)
 
 * Integrate coverage and update dependencies ([60024ff](https://github.com/lgaticaq/hubot-anime-dl/commit/60024ff))
