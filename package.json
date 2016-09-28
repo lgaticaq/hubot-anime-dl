@@ -10,7 +10,9 @@
     "codeclimate": "codeclimate-test-reporter < coverage/lcov.info",
     "release:major": "changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags && npm publish",
     "release:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags && npm publish",
-    "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags && npm publish"
+    "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags && npm publish",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "engines": {
     "node": ">=4"
@@ -31,7 +33,8 @@
   },
   "homepage": "https://github.com/lgaticaq/hubot-anime-dl#readme",
   "dependencies": {
-    "anime-dl": "^3.0.0"
+    "anime-dl": "^3.0.0",
+    "snyk": "^1.19.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
@@ -43,5 +46,6 @@
     "istanbul": "^0.4.4",
     "mocha": "^3.0.2",
     "proxyquire": "^1.7.10"
-  }
+  },
+  "snyk": true
 }

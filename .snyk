@@ -1,0 +1,7 @@
+version: v1.5.0
+ignore:
+  'npm:tough-cookie:20160722':
+    - anime-dl > cloudscraper > tough-cookie:
+        reason: None given
+        expires: '2016-10-28T16:04:49.093Z'
+patch: {}
