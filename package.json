@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/lgaticaq/hubot-anime-dl#readme",
   "dependencies": {
-    "anime-dl": "^3.0.0"
+    "anime-dl": "^4.0.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
