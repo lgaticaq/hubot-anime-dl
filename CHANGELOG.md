@@ -1,3 +1,16 @@
+#### 2.1.1 (2016-12-17)
+
+##### Chores
+
+* **package:**
+  * Update dependencies ([ff69cb0d](https://github.com/lgaticaq/hubot-anime-dl/commit/ff69cb0d0c1db241c8a8a472b25be30c25c22cc0))
+  * Add yarn.lock ([b435febf](https://github.com/lgaticaq/hubot-anime-dl/commit/b435febf1f6c39959ca8bfcbae852adbb2c42be3))
+  * Update dependencies ([355cfdaf](https://github.com/lgaticaq/hubot-anime-dl/commit/355cfdaffdc723453884ad0fc09f75e13cff2e41))
+  * update anime-dl to version 4.0.1 ([5ce16c3b](https://github.com/lgaticaq/hubot-anime-dl/commit/5ce16c3bb46d9dfa0a532edb2de2299b7342793a))
+* **npm:** Update ignores ([dd48ca6c](https://github.com/lgaticaq/hubot-anime-dl/commit/dd48ca6c4eda5f61b2d4b05bdd36a1f40a2a7363))
+* **travis:** Add node v7 ([2b79a27e](https://github.com/lgaticaq/hubot-anime-dl/commit/2b79a27e131487c6d60ecee6898a236720a31975))
+* **nvm:** Update node version ([ed522f5a](https://github.com/lgaticaq/hubot-anime-dl/commit/ed522f5a709d9ee0afb1aaf648be311356421dbc))
+
 ### 2.1.0 (2016-8-14)
 
 ##### Chores
