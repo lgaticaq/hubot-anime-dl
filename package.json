@@ -1,6 +1,6 @@
 {
   "name": "hubot-anime-dl",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "A Hubot script to download anime videos",
   "main": "src",
   "scripts": {
