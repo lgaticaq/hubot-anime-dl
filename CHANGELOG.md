@@ -1,3 +1,17 @@
+#### 2.1.2 (2017-3-26)
+
+##### Chores
+
+* **package:**
+  * Upgrade proxyquire to version 1.7.11 ([a7a914de](https://github.com/lgaticaq/hubot-anime-dl/commit/a7a914dee17b76fce956c37545a641f2c0d44726))
+  * Upgrade hubot-test-helper to version 1.5.1 ([e735014f](https://github.com/lgaticaq/hubot-anime-dl/commit/e735014f6f1668a09cecadfc1c104c6080680794))
+  * Upgrade coveralls to version 2.12.0 ([c6a03c65](https://github.com/lgaticaq/hubot-anime-dl/commit/c6a03c65f5cb704ec8cbd8b5830c4f43588ee531))
+  * Upgrade coffee-script to version 1.12.4 ([3a125ba8](https://github.com/lgaticaq/hubot-anime-dl/commit/3a125ba81693ecac52a8588467c6b9418f61fcb0))
+  * Upgrade coffee-coverage to version 2.0.1 ([742335bb](https://github.com/lgaticaq/hubot-anime-dl/commit/742335bb67a07f9627cbcf1edef947c19e9d8536))
+  * Upgrade anime-dl to version 4.0.3 ([b1cfc05b](https://github.com/lgaticaq/hubot-anime-dl/commit/b1cfc05b401a5678e38591e900a0b1a2f6076862))
+  * update coffee-coverage to version 2.0.0 ([1bbf21f0](https://github.com/lgaticaq/hubot-anime-dl/commit/1bbf21f0fd563031fcf50c24431f39a71a99c704))
+* **travis:** Add cache yarn ([fe4c878c](https://github.com/lgaticaq/hubot-anime-dl/commit/fe4c878c19ee00d1c03bf74daaac8340285ded95))
+
 #### 2.1.1 (2016-12-17)
 
 ##### Chores
